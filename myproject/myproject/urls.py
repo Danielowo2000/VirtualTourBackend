@@ -49,6 +49,6 @@ urlpatterns = [
     # Tour Endpoints
     path('listtours/', views.TourListView.as_view(), name='tour-list'),
     path('listtours/<int:tourID>/', views.TourDetailView.as_view(), name='tour-detail'), # Gets a particular tour
-    path('tours/', views.TourDetailView.as_view(), name='tour-detail'), # Post tour data to database (Post Request)
+    path('tours/', views.TourListView.as_view(), name='tour-detail'), # Post tour data to database (Post Request)
     path('', RedirectView.as_view(url='listtours/<int:tourID>/')),
 ]
