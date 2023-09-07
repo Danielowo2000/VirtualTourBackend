@@ -25,8 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Class based view
-    # path('', TestView.as_view(), name='test'),
-    # path('api/token/', obtain_auth_token, name='obtain')
+    # Returns a token for each user.
+    path('createuser/', views.UserCreateView.as_view(), name='user-create'),
     path('users/<int:userID>/', views.UserDetailView.as_view(), name='user-detail'),
     path('users/', views.UserDetailView.as_view(), name='user-create'),
     path('users/<int:userID>/bookings/', views.UserBookingListView.as_view(), name='user-bookings'),
